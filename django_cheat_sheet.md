@@ -24,11 +24,17 @@
 
 ## Working with Models
 `from blog.models import Post` - You have to import models to query them
+
 `Post.objects.all()` - Get a queryset of all Post objects
+
 `Post.objects.create(author=me, title='Sample title', text='Test text')` - create a Post
+
 `Post.objects.filter(author=me)` - filter Post objects by author, this is similar to `.where` in Rails or `WHERE` in MySQL
+
 `Post.objects.filter(title__contains='title')` - There are two underscore characters between title and contains. Django's ORM uses this rule to separate field names ("title") and operations or filters ("contains")
+
 `Post.objects.order_by('created_date')` - order by `created_date` column this is the exact same as Rails
+
 `Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')` - you can chain query methods together
 
 ## Config File Examples
